@@ -21,15 +21,13 @@ $(function(){
     });
 
     // check and uncheck = toggle between shopping item checked class when clicked
-    $('li').on('click', '.shopping-item-toggle', function(event){
-        let targetItem = $(event.currentTarget);
-        let liChild = targetItem.parent();
-        let closestSpan = liChild.parent();
-        closestSpan.toggleClass('shopping-item__checked');
+    $('.shopping-list').on('click', '.shopping-item-toggle', function(event){
+        let targetItem = $(event.currentTarget).parent().parent();
+        $(targetItem).find('.shopping-item').toggleClass('shopping-item__checked');
     });
 
     // delete li where delete button was clicked
-    $('li').on('click', '.shopping-item-delete', function(event){
+    $('.shopping-list').on('click', '.shopping-item-delete', function(event){
         let deleteItem = $(event.currentTarget).parent().parent();
         deleteItem.remove();
     });
