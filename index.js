@@ -22,8 +22,11 @@ $(function(){
 
     // check and uncheck = toggle between shopping item checked class when clicked
     $('.shopping-list').on('click', '.shopping-item-toggle', function(event){
-        let targetItem = $(event.currentTarget).parent().parent();
-        $(targetItem).find('.shopping-item').toggleClass('shopping-item__checked');
+        console.log(this);
+        console.log(this.closest('li'));
+        $(this).closest('li').find('.shopping-item').toggleClass('shopping-item__checked');
+        // let targetItem = $(event.currentTarget).parent().parent();
+        // $(targetItem).find('.shopping-item').toggleClass('shopping-item__checked');
     });
 
     // delete li where delete button was clicked
